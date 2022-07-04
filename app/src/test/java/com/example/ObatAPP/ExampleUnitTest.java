@@ -1,4 +1,4 @@
-package com.example.InventoryAPP;
+package com.example.ObatAPP;
 
 import org.junit.Test;
 

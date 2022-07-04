@@ -32,45 +32,55 @@
 
 
             <TextView
-                android:id="@+id/kdbrg"
+                android:id="@+id/kd_obat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/content2"
                 android:fontFamily="@font/popsem"
                 android:padding="8dp"
-                android:text="Kode Barang"
+                android:text="Kode Obat"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/nmbrg"
+                android:id="@+id/nm_obat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/kdbrg"
+                android:layout_below="@id/kd_obat"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/popsem"
                 android:text="nama barang"
                 android:textSize="25sp" />
 
-            <TextView
-                android:id="@+id/hrgbeli"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/nmbrg"
-                android:fontFamily="@font/popsem"
-                android:text="Harga Beli"
-                android:textColor="@color/main"
-                android:visibility="gone"
-                android:textSize="18sp" />
+            <!--            <TextView-->
+            <!--                android:id="@+id/satuan"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_below="@+id/nm_obat"-->
+            <!--                android:fontFamily="@font/popsem"-->
+            <!--                android:text="Satuan"-->
+            <!--                android:textColor="@color/main"-->
+            <!--                android:textSize="18sp" />-->
 
             <TextView
-                android:id="@+id/hrgjual"
+                android:id="@+id/satuan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/nmbrg"
+                android:layout_below="@+id/nm_obat"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/popsem"
-                android:text="Harga Jual"
+                android:text="Satuan"
+                android:textColor="@color/main"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/expired"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/satuan"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/popsem"
+                android:text="Expired"
                 android:textColor="@color/main"
                 android:textSize="20sp" />
 
@@ -78,21 +88,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Stock:"
-                android:layout_toLeftOf="@+id/stok"
+                android:layout_toLeftOf="@+id/jumlah"
                 android:textSize="18sp"
                 android:layout_marginRight="2dp"
                 android:fontFamily="@font/popsem"
                 />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/stok"
-            android:text="Stok"
-            android:textSize="18sp"
-            android:textColor="@color/main"
-            android:fontFamily="@font/popsem"
-            android:layout_alignParentRight="true"
-            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/jumlah"
+                android:text="Jumlah"
+                android:textSize="18sp"
+                android:textColor="@color/main"
+                android:fontFamily="@font/popsem"
+                android:layout_alignParentRight="true"
+                />
 
         </RelativeLayout>
 

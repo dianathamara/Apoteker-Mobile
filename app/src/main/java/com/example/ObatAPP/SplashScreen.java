@@ -1,4 +1,4 @@
-package com.example.InventoryAPP;
+package com.example.ObatAPP;
 
 import android.content.Intent;
 import android.os.Bundle;

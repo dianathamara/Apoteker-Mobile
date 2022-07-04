@@ -3,9 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/InventoryApp-Volley/app/src/main/res/drawable/content1.xml" value="0.17222222222222222" />
+        <entry key="..\:/InventoryApp-Volley/app/src/main/res/layout/activity_main.xml" value="0.164453125" />
+        <entry key="..\:/InventoryApp-Volley/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
+        <entry key="..\:/InventoryApp-Volley/app/src/main/res/layout/form_barang.xml" value="0.248828125" />
+        <entry key="..\:/InventoryApp-Volley/app/src/main/res/layout/list.xml" value="0.248828125" />
+        <entry key="..\:/SEMESTER 4/MOBILE 2 PROJEC/obatku/InventoryApp-Volley/app/src/main/res/layout/list.xml" value="0.1875" />
         <entry key="..\:/androidProject-master/app/src/main/res/layout/activity_main.xml" value="0.1606962663975782" />
         <entry key="..\:/androidProject-master/app/src/main/res/layout/form_mahasiswa.xml" value="0.1606962663975782" />
         <entry key="..\:/androidProject-master/app/src/main/res/layout/list.xml" value="0.33" />
+        <entry key="..\:/obatku/InventoryApp-Volley/app/src/main/res/layout/activity_main.xml" value="0.1318530701754386" />
         <entry key="..\:/share/Task-4/InventoryApp-Volley/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.144921875" />
         <entry key="..\:/share/Task-4/InventoryApp-Volley/app/src/main/res/drawable/content1.xml" value="0.146875" />
         <entry key="..\:/share/Task-4/InventoryApp-Volley/app/src/main/res/drawable/content2.xml" value="0.2703125" />

@@ -1,4 +1,4 @@
-package com.example.InventoryAPP;
+package com.example.ObatAPP;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,10 +34,10 @@ import java.util.List;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
-    public static final String URLTAMPIL = "http://192.168.11.19/crud/select.php";
-    public static final String URLDELETE = "http://192.168.11.19/crud/delete.php";
-    public static final String URLINSERT = "http://192.168.11.19/crud/insert.php";
-    public static final String URLUBAH = "http://192.168.11.19/crud/edit.php";
+    public static final String URLTAMPIL = "http://192.168.46.5/crud/select.php";
+    public static final String URLDELETE = "http://192.168.46.5/crud/delete.php";
+    public static final String URLINSERT = "http://192.168.46.5/crud/insert.php";
+    public static final String URLUBAH = "http://192.168.46.5/crud/edit.php";
 
     ListView list;
     AlertDialog.Builder dialog;
@@ -47,8 +47,8 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
     LayoutInflater inflater;
     View dialogView;
-    EditText tid,tkdbrg,tnmbrg,thrgbeli,thrgjual,tstok;
-    String id, kdbrg, nmbrg, hrgbeli, hrgjual, stok;
+    EditText tid,tkdobat,tnmobat,tsatuan,tjumlah,texpired;
+    String id, kdobat, nmobat, satuan, jumlah, expired;
     FloatingActionButton fab;
 
     @Override
@@ -139,11 +139,11 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                         Data item = new Data();
 
                         item.setId(obj.getString("id"));
-                        item.setKdbrg(obj.getString("kdbrg"));
-                        item.setNmbrg(obj.getString("nmbrg"));
-                        item.setHrgbeli(obj.getString("hrgbeli"));
-                        item.setHrgjual(obj.getString("hrgjual"));
-                        item.setStok(obj.getString("stok"));
+                        item.setKdobat(obj.getString("kode_obat"));
+                        item.setNmobat(obj.getString("nama_obat"));
+                        item.setSatuan(obj.getString("satuan_obat"));
+                        item.setJumlah(obj.getString("jumlah"));
+                        item.setExpired(obj.getString("expired"));
 
                         // menambah item ke array
                         itemList.add(item);
@@ -180,11 +180,11 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                             JSONObject jObj = new JSONObject(response);
 
                             String idx = jObj.getString("id");
-                            String kdbrgx = jObj.getString("kdbrg");
-                            String nmbrgx = jObj.getString("nmbrg");
-                            String hrgbelix = jObj.getString("hrgbeli");
-                            String hrgjualx = jObj.getString("hrgjual");
-                            String stokx = jObj.getString("stok");
+                            String kdbrgx = jObj.getString("kode_obat");
+                            String nmbrgx = jObj.getString("nama_obat");
+                            String hrgbelix = jObj.getString("satuan_obat");
+                            String hrgjualx = jObj.getString("jumlah");
+                            String stokx = jObj.getString("expired");
 
                             DialogForm(idx, kdbrgx, nmbrgx, hrgbelix, hrgjualx, stokx, "UPDATE");
 
@@ -257,11 +257,11 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                             JSONObject jObj = new JSONObject(response);
 
                             String idx = jObj.getString("id");
-                            String kdbrgx = jObj.getString("kdbrg");
-                            String nmbrgx = jObj.getString("nmbrg");
-                            String hrgbelix = jObj.getString("hrgbeli");
-                            String hrgjualx = jObj.getString("hrgjual");
-                            String stokx = jObj.getString("stok");
+                            String kdbrgx = jObj.getString("kode_obat");
+                            String nmbrgx = jObj.getString("nama_obat");
+                            String hrgbelix = jObj.getString("satuan_obat");
+                            String hrgjualx = jObj.getString("jumlah");
+                            String stokx = jObj.getString("expired");
 
                             DialogFormLihat(idx, kdbrgx, nmbrgx, hrgbelix, hrgjualx, stokx);
 
@@ -273,11 +273,11 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                         }
 
                         tid.setEnabled(false);
-                        tkdbrg.setEnabled(false);
-                        tnmbrg.setEnabled(false);
-                        thrgbeli.setEnabled(false);
-                        thrgjual.setEnabled(false);
-                        tstok.setEnabled(false);
+                        tkdobat.setEnabled(false);
+                        tnmobat.setEnabled(false);
+                        tsatuan.setEnabled(false);
+                        tjumlah.setEnabled(false);
+                        texpired.setEnabled(false);
 
                     }
                 }, new Response.ErrorListener() {
@@ -324,19 +324,19 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                 Map<String, String> params = new HashMap<String, String>();
 
                 if (id.isEmpty()) {
-                    params.put("kdbrg", kdbrg);
-                    params.put("nmbrg", nmbrg);
-                    params.put("hrgbeli", hrgbeli);
-                    params.put("hrgjual", hrgjual);
-                    params.put("stok", stok);
+                    params.put("kode_obat", kdobat);
+                    params.put("nama_obat", nmobat);
+                    params.put("satuan", satuan);
+                    params.put("jumlah", jumlah);
+                    params.put("expired", expired);
                     return params;
                 }else{
                     params.put("id", id);
-                    params.put("kdbrg", kdbrg);
-                    params.put("nmbrg", nmbrg);
-                    params.put("hrgbeli", hrgbeli);
-                    params.put("hrgjual", hrgjual);
-                    params.put("stok", stok);
+                    params.put("kode_obat", kdobat);
+                    params.put("nama_obat", nmobat);
+                    params.put("satuan", satuan);
+                    params.put("jumlah", jumlah);
+                    params.put("expired", expired);
                     return params;
                 }
             }
@@ -357,19 +357,19 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         dialog.setTitle("Data Barang");
 
         tid = (EditText) dialogView.findViewById(R.id.inId);
-        tkdbrg = (EditText) dialogView.findViewById(R.id.inKdBrg);
-        tnmbrg = (EditText) dialogView.findViewById(R.id.inNmBrg);
-        thrgbeli = (EditText) dialogView.findViewById(R.id.inHrgBeli);
-        thrgjual = (EditText) dialogView.findViewById(R.id.inHrgJual);
-        tstok = (EditText) dialogView.findViewById(R.id.inStok);
+        tkdobat = (EditText) dialogView.findViewById(R.id.inKdObat);
+        tnmobat = (EditText) dialogView.findViewById(R.id.inNmObat);
+        tsatuan = (EditText) dialogView.findViewById(R.id.inSatuan);
+        tjumlah = (EditText) dialogView.findViewById(R.id.inJumlah);
+        texpired = (EditText) dialogView.findViewById(R.id.inExpired);
 
         if (!idx.isEmpty()) {
             tid.setText(idx);
-            tkdbrg.setText(kdbrgx);
-            tnmbrg.setText(nmbrgx);
-            thrgbeli.setText(hrgbelix);
-            thrgjual.setText(hrgjualx);
-            tstok.setText(stokx);
+            tkdobat.setText(kdbrgx);
+            tnmobat.setText(nmbrgx);
+            tsatuan.setText(hrgbelix);
+            tjumlah.setText(hrgjualx);
+            texpired.setText(stokx);
         } else {
             kosong();
         }
@@ -379,11 +379,11 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 id = tid.getText().toString();
-                kdbrg = tkdbrg.getText().toString();
-                nmbrg = tnmbrg.getText().toString();
-                hrgbeli = thrgbeli.getText().toString();
-                hrgjual = thrgjual.getText().toString();
-                stok = tstok.getText().toString();
+                kdobat = tkdobat.getText().toString();
+                nmobat = tnmobat.getText().toString();
+                satuan = tsatuan.getText().toString();
+                jumlah = tjumlah.getText().toString();
+                expired= texpired.getText().toString();
                 simpan();
 
                 dialog.dismiss();
@@ -413,19 +413,19 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         dialog.setTitle("Data Barang");
 
         tid = (EditText) dialogView.findViewById(R.id.inId);
-        tkdbrg = (EditText) dialogView.findViewById(R.id.inKdBrg);
-        tnmbrg = (EditText) dialogView.findViewById(R.id.inNmBrg);
-        thrgbeli = (EditText) dialogView.findViewById(R.id.inHrgBeli);
-        thrgjual = (EditText) dialogView.findViewById(R.id.inHrgJual);
-        tstok = (EditText) dialogView.findViewById(R.id.inStok);
+        tkdobat = (EditText) dialogView.findViewById(R.id.inKdObat);
+        tnmobat = (EditText) dialogView.findViewById(R.id.inNmObat);
+        tsatuan = (EditText) dialogView.findViewById(R.id.inSatuan);
+        tjumlah = (EditText) dialogView.findViewById(R.id.inJumlah);
+        texpired = (EditText) dialogView.findViewById(R.id.inExpired);
 
         if (!idx.isEmpty()) {
             tid.setText(idx);
-            tkdbrg.setText(kdbrgx);
-            tnmbrg.setText(nmbrgx);
-            thrgbeli.setText(hrgbelix);
-            thrgjual.setText(hrgjualx);
-            tstok.setText(stokx);
+            tkdobat.setText(kdbrgx);
+            tnmobat.setText(nmbrgx);
+            tsatuan.setText(hrgbelix);
+            tjumlah.setText(hrgjualx);
+            texpired.setText(stokx);
         } else {
             kosong();
         }
@@ -444,10 +444,10 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     }
     private void kosong() {
         tid.setText(null);
-        tkdbrg.setText(null);
-        tnmbrg.setText(null);
-        thrgbeli.setText(null);
-        thrgjual.setText(null);
-        tstok.setText(null);
+        tkdobat.setText(null);
+        tnmobat.setText(null);
+        tsatuan.setText(null);
+        tjumlah.setText(null);
+        texpired.setText(null);
     }
 }

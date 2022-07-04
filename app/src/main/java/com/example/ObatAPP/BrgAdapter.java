@@ -1,4 +1,4 @@
-package com.example.InventoryAPP;
+package com.example.ObatAPP;
 
 import android.app.Activity;
 import android.content.Context;
@@ -48,25 +48,22 @@ public class BrgAdapter extends BaseAdapter {
         if (convertView == null) convertView = inflater.inflate(R.layout.list, null);
 
 
-        TextView kdbrg = (TextView) convertView.findViewById(R.id.kdbrg);
-        TextView nmbrg = (TextView) convertView.findViewById(R.id.nmbrg);
-        TextView hrgbeli = (TextView) convertView.findViewById(R.id.hrgbeli);
-        TextView hrgjual = (TextView) convertView.findViewById(R.id.hrgjual);
-        TextView stok = (TextView) convertView.findViewById(R.id.stok);
+        TextView kdobat = (TextView) convertView.findViewById(R.id.kd_obat);
+        TextView nmobat = (TextView) convertView.findViewById(R.id.nm_obat);
+        TextView satuan = (TextView) convertView.findViewById(R.id.satuan);
+        TextView jumlah = (TextView) convertView.findViewById(R.id.jumlah);
+        TextView expired = (TextView) convertView.findViewById(R.id.expired);
 
         Data data = items.get(position);
 
         // Convert ke format rupiah
 
-        String fhrgBeli  = formatRupiah(Double.parseDouble(data.getHrgbeli()));
-        String fhrgJual  = formatRupiah(Double.parseDouble(data.getHrgjual()));
 
-
-        kdbrg.setText(data.getKdbrg());
-        nmbrg.setText(data.getNmbrg());
-        hrgbeli.setText(fhrgBeli);
-        hrgjual.setText(fhrgJual);
-        stok.setText(data.getStok());
+        kdobat.setText(data.getKdobat());
+        nmobat.setText(data.getNmobat());
+        satuan.setText(data.getSatuan());
+        jumlah.setText(data.getJumlah());
+        expired.setText(data.getExpired());
 
         return convertView;
     }

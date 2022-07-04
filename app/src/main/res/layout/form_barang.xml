@@ -29,12 +29,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kode Barang:"
+            android:text="Kode Obat:"
             android:textSize="17sp"
             android:fontFamily="@font/popmed"
             />
         <EditText
-            android:id="@+id/inKdBrg"
+            android:id="@+id/inKdObat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -45,13 +45,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nama Barang:"
+            android:text="Nama Obat:"
             android:textSize="17sp"
             android:fontFamily="@font/popmed"
             />
 
         <EditText
-            android:id="@+id/inNmBrg"
+            android:id="@+id/inNmObat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -62,50 +62,49 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Harga Beli:"
+            android:text="Satuan:"
             android:textSize="17sp"
             android:fontFamily="@font/popmed"
             />
 
         <EditText
-            android:id="@+id/inHrgBeli"
+            android:id="@+id/inSatuan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:textSize="17sp"
-            android:fontFamily="@font/popmed"
-            android:inputType="numberDecimal" />
+            android:fontFamily="@font/popmed" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Harga Jual:"
+            android:text="Stock:"
             android:textSize="17sp"
             android:fontFamily="@font/popmed"
             />
         <EditText
-            android:id="@+id/inHrgJual"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:textSize="17sp"
-            android:fontFamily="@font/popmed"
-            android:inputType="numberDecimal" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Stok:"
-            android:textSize="17sp"
-            android:fontFamily="@font/popmed"
-            />
-        <EditText
-            android:id="@+id/inStok"
+            android:id="@+id/inJumlah"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:textSize="17sp"
             android:fontFamily="@font/popmed"
             android:inputType="number" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exipred Date:"
+            android:textSize="17sp"
+            android:fontFamily="@font/popmed"
+            />
+        <EditText
+            android:id="@+id/inExpired"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textSize="17sp"
+            android:fontFamily="@font/popmed"
+            android:inputType="date" />
 
     </LinearLayout>
 
